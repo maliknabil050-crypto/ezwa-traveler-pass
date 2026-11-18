@@ -43,7 +43,6 @@
         radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.06), transparent 50%);
     }
 
-    /* شريط السدو الهندسي */
     .sadu-bar {
       width: 100%;
       height: 10px;
@@ -209,7 +208,6 @@
       transform: scale(0.98);
     }
 
-    /* خيارات التحدي */
     .quiz-question {
       background: var(--bg-elevated);
       border: 1px solid rgba(255, 255, 255, 0.06);
@@ -267,7 +265,6 @@
       color: #ff8b80;
     }
 
-    /* حقول التوثيق */
     .input-group {
       margin-bottom: 16px;
       text-align: right;
@@ -296,7 +293,6 @@
       border-color: var(--gold-primary);
     }
 
-    /* بطاقة VIP الموثقة */
     .vip-card {
       background: linear-gradient(155deg, #1b1915 0%, #0f0e0c 100%);
       border: 1.5px solid var(--gold-primary);
@@ -426,7 +422,6 @@
       </div>
     </div>
 
-    <!-- الشاشة 1: الترحيب -->
     <section id="screen-hero" class="screen active">
       <div class="masmak-emblem">
         <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -450,7 +445,6 @@
       <button class="btn-primary" onclick="goToScreen('screen-quiz')">ابدأ التحدي</button>
     </section>
 
-    <!-- الشاشة 2: تحدي قصر المصمك -->
     <section id="screen-quiz" class="screen">
       <h2>بوابة قصر المصمك 🏛️</h2>
       <p class="desc">أجب على سؤال التأسيس لفتح سجل التوثيق السحابي الخاص بقطعتك:</p>
@@ -468,7 +462,6 @@
       <div class="feedback-msg" id="quiz-feedback"></div>
     </section>
 
-    <!-- الشاشة 3: تسجيل اسم المالك -->
     <section id="screen-register" class="screen">
       <h2>توثيق الملكية السحابية 🔒</h2>
       <p class="desc">أحسنت! أدخل اسمك الرسمي ليتم قفل الرقم التسلسلي باسمك وإصدار بطاقة الـ VIP الرقمية.</p>
@@ -481,7 +474,6 @@
       <button class="btn-primary" onclick="registerOwnership()">توثيق وقفل الملكية الآن</button>
     </section>
 
-    <!-- الشاشة 4: بطاقة VIP الموثقة -->
     <section id="screen-card" class="screen">
       <div class="vip-card">
         <div class="verified-badge">✓ وثيقة ملكية موثقة ومقفلة سحابياً</div>
@@ -519,7 +511,6 @@
   </div>
 
   <script>
-    // قراءة الرقم التسلسلي من رابط شريحة NFC مثل: ?id=0002-EZWA-MSM
     const urlParams = new URLSearchParams(window.location.search);
     const serialNumber = urlParams.get('id') || urlParams.get('sn') || '0001-EZWA-MSM';
     const storageKey = 'ezwa_msm_verified_' + serialNumber;
@@ -592,7 +583,6 @@
       goToScreen('screen-hero');
     }
 
-    // التحقق التلقائي عند فتح الرابط إذا كانت القطعة موثقة مسبقاً
     window.addEventListener('DOMContentLoaded', () => {
       const saved = localStorage.getItem(storageKey);
       if (saved) {
